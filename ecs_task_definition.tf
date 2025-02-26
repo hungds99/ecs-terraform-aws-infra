@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "app" {
       name      = "${var.project_name}-container"
       image     = var.container_image
       essential = true
-      
+
       portMappings = [
         {
           containerPort = var.container_port
@@ -21,7 +21,7 @@ resource "aws_ecs_task_definition" "app" {
           protocol      = "tcp"
         }
       ]
-      
+
       logConfiguration = {
         logDriver = "awslogs"
         options = {
@@ -30,7 +30,7 @@ resource "aws_ecs_task_definition" "app" {
           "awslogs-stream-prefix" = "ecs"
         }
       }
-      
+
       # Add environment variables as needed
       # environment = [
       #   {
@@ -38,7 +38,7 @@ resource "aws_ecs_task_definition" "app" {
       #     value = "production"
       #   }
       # ]
-      
+
       # Add secrets as needed
       # secrets = [
       #   {

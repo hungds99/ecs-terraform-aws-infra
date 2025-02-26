@@ -56,7 +56,7 @@ resource "aws_appautoscaling_policy" "ecs_policy_requests" {
       predefined_metric_type = "ALBRequestCountPerTarget"
       resource_label         = "${aws_lb.main.arn_suffix}/${aws_lb_target_group.app.arn_suffix}"
     }
-    target_value       = 1000  # Requests per target
+    target_value       = 1000 # Requests per target
     scale_in_cooldown  = 300
     scale_out_cooldown = 60
   }
